@@ -18,6 +18,16 @@ var commentRoutes 		= require("./routes/comments"),
 
 mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
+// mongoose.connect("mongodb+srv://sgmullins:password123456@cluster0-ynxqe.mongodb.net/test?retryWrites=true&w=majority", {
+// 	useNewUrlParser: true,
+// 	useCreateIndex: true
+// }).then(() => {
+// 	console.log('Connected to DB!');
+// }).catch(err => {
+// 	console.log('ERROR:', err.message);
+// });
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
