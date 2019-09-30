@@ -11,12 +11,17 @@ var express     = require("express"),
     seedDB      = require("./seeds"),
 	methodOverride = require("method-override");
 
-//requireing route
+//requiring route
 var commentRoutes 		= require("./routes/comments"),
 	campgroundRoutes 	= require("./routes/campgrounds"),
 	indexRoutes 		= require("./routes/index");
 
+
 mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+// local database to revert to if error mongodb://localhost/yelp_camp
+// mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
+
+// heroku datbase via mongo atlas
 
 // mongoose.connect("mongodb+srv://sgmullins:password123456@cluster0-ynxqe.mongodb.net/test?retryWrites=true&w=majority", {
 // 	useNewUrlParser: true,
